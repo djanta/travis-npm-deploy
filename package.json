@@ -1,8 +1,8 @@
 {
   "name": "travis-npm-deploy",
-  "version": "0.17.0",
-  "description": "djanta.io releasing tool module based on node implementation",
-  "homepage": "www.djanta.io",
+  "version": "0.0.0",
+  "description": "djanta platform customized NPM deploy shared script",
+  "homepage": "http://djanta.io",
   "license": "MIT",
   "author": {
     "name": "Stanislas Koffi ASSOUTOVI",
@@ -27,20 +27,10 @@
     "node": ">=7.0.0",
     "npm": ">=4.6.0"
   },
-  "bin": {
-    "djantaio-bump": "./release.js"
-  },
-  "main": "release.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "echo '== echo =='",
-    "lint": "./node_modules/.bin/eslint **/*.js",
-    "lint-html": "./node_modules/.bin/eslint **/*.js -f html -o ./reports/lint-results.html",
-    "hint": "./node_modules/.bin/jshint --verbose --config .jshintrc --reporter jslint",
-    "test": "npm run hint && npm run lint-html && nyc ./node_modules/.bin/mocha ./test --reporter spec --recursive --timeout 3000 --inspect --use_strict --expose-gc --colors",
-    "coverage": "npm run hint && npm run lint-html && nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "bump-dry": "./node_modules/.bin/grunt bump --dry-run",
     "bump": "./node_modules/.bin/grunt bump",
     "bump-patch": "./node_modules/.bin/grunt bump:patch",
@@ -53,30 +43,11 @@
     "bump-premajor": "./node_modules/.bin/grunt bump:premajor"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
     "eslint-config-xo-space": "^0.16.0",
-    "nyc": "^11.0.3",
     "eslint": "^4.5.0",
     "eslint-plugin-nodeca": "^1.0.3",
     "jshint": "^2.9.5",
-    "mocha": "^3.3.0",
-    "should": "^11.2.1",
-    "standard": "^10.0.2",
     "grunt-bump": "^0.8.0",
     "grunt": "^1.0.2"
-  },
-  "dependencies": {
-    "chalk": "^1.1.3",
-    "changelog": "^1.4.1",
-    "dateformat": "^2.0.0",
-    "dateutil": "^0.1.0",
-    "editorconfig": "^0.15.0",
-    "init": "^0.1.2",
-    "lodash": "^4.17.4",
-    "read-yaml": "^1.1.0",
-    "semver": "^5.4.1",
-    "shelljs": "^0.7.8",
-    "verb": "^0.8.10",
-    "yargs": "^8.0.2"
   }
 }
