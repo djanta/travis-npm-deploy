@@ -103,7 +103,7 @@ git_confg () {
 npm_login () {
   if which npm > /dev/null; then
     echo "Log into npm registry ..."
-    ./"${WDIR}/npm/login.sh" ${@}
+    ."${WDIR}/npm/login.sh" ${@}
   fi
 }
 
