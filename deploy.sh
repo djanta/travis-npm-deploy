@@ -18,6 +18,16 @@
 
 set -e # exit with nonzero exit code if anything fails
 
+argv0=$(echo "$0" | sed -e 's,\\,/,g')
+basedir=$(dirname "$(readlink "$0" || echo "$argv0")")
+
+case "$(uname -s)" in
+  Linux) basedir=$(dirname "$(readlink -f "$0" || echo "$argv0")");;
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+WDIR=`dirname ${basedir}`
+
 PROGNAME=${0##*/}
 V_REGEX='^(v[0-9]+\.){0,2}(\*|[0-9]+)$'
 LOCK_FILE='~/.npm-lock'
@@ -25,6 +35,7 @@ LOCK_FILE='~/.npm-lock'
 #Copied from: https://github.com/fsaintjacques/semver-tool/blob/master/src/semver
 SEMVER_REGEX="^v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
 
+DESCRIBE=`git describe --tags --always`
 
 ############################# PRIVATE FUNCTIONS #############################
 
@@ -68,7 +79,11 @@ _isSu () {
 ############################# PUBLIC FUNCTIONS #############################
 
 apt_install () {
-  ./npm/install.sh ${@}
+  if ! which expect > /dev/null; then
+    _isSu
+    sudo apt-get install \
+      expect -y
+  fi
 }
 
 ##
@@ -79,8 +94,6 @@ git_confg () {
   [ -n "${DEFINED_GIT_USER##+([[:space:]])}" ] && GH_USER="$DEFINED_GIT_USER" || GH_USER="$GH_USER"
   [ -n "${DEFINED_GIT_TOKEN##+([[:space:]])}" ] && GH_TOKEN="$DEFINED_GIT_TOKEN" || GH_TOKEN="$GH_TOKEN"
 
-  DESCRIBE=`git describe --tags --always`
-
   git config user.name "$GDUSER"
   git config user.email "$GH_USER_EMAIL"
   git config credential.helper "store --file=.git/credentials"
@@ -89,8 +102,10 @@ git_confg () {
 
 # Begin of Npm tools
 npm_login () {
-  echo "Log into npm registry ..."
-  ./npm/login.sh ${@} #pass all the given arguments ...
+  if which npm > /dev/null; then
+    echo "Log into npm registry ..."
+    ./"${WDIR}/npm/login.sh" ${@}
+  fi
 }
 
 npm_logout () {
@@ -137,7 +152,6 @@ case "${1}" in
     _graceful_exit
   ;;
   -u|--config|--git-config)
-  echo "Git Config ..."
     git_confg ${@:2:$#}
     _graceful_exit
   ;;
