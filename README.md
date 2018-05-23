@@ -48,12 +48,9 @@ sh ~/travis-npm-deploy.git/deploy.sh #You pass any mandatory npm arugment here
 Git Confgiure Usage
 --------------------------
 
-## Git
---------------------------
 ```bash
 sh ~/travis-npm-deploy.git/deploy.sh --git-config
 ```
-
 
 Contributing
 --------------------------
