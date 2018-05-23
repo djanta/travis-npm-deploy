@@ -80,7 +80,6 @@ _isSu () {
 
 apt_install () {
   if ! which expect > /dev/null; then
-    _isSu
     sudo apt-get install \
       expect -y
   fi
