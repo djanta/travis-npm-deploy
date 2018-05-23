@@ -49,4 +49,4 @@ sh ~/travis-npm-deploy.git/deploy.sh --git-config
 ```
 
 # Contributing
-I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/djanta/travis-npm-deploy/issues) on GitHub and [submit a pull request](https://github.com/djantaio/travis-npm-deploy/pulls).
+I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/djanta/travis-npm-deploy/issues) on GitHub and [submit a pull request](https://github.com/djanta/travis-npm-deploy/pulls).
