@@ -1,6 +1,6 @@
 # travis-npm-deploy
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/djanta/travis-npm-deploy/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/djanta/travis-npm-deploy/blob/master/LICENSE)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square)](https://gitter.im/djantajs/tools?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 > Internal platform shared npm deploy script
