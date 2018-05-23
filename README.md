@@ -5,7 +5,7 @@
 
 > Internal platform shared npm deploy script
 
-#Installation
+Installation
 --------------------------
 You can clone the repository `travis-npm-deploy` at [git](https://github.com/djanta/travis-npm-deploy.git).
 
@@ -20,41 +20,41 @@ To do so, you'll have to run the following command.
 sh ~/travis-npm-deploy.git/deploy.sh --install
 ```
 
-#Usage
+Usage
 --------------------------
 
 ```bash
 Usage: djantaio-bump [options]
 ```
 
-##Npm login
+## Npm login
 --------------------------
 ```bash
 sh ~/travis-npm-deploy.git/deploy.sh login --user=MyNpmUserName --password=MyNpmUserPassord --email=MyNpmUserEmail
 ```
 
-##Npm logout
+## Npm logout
 --------------------------
 ```bash
 sh ~/travis-npm-deploy.git/deploy.sh logout #You pass any mandatory npm arugment here
 ```
 
-##Npm publish
+## Npm publish
 --------------------------
 ```bash
 sh ~/travis-npm-deploy.git/deploy.sh #You pass any mandatory npm arugment here
 ```
 
-#Git Confgiure Usage
+Git Confgiure Usage
 --------------------------
 
-##Git
+## Git
 --------------------------
 ```bash
 sh ~/travis-npm-deploy.git/deploy.sh --git-config
 ```
 
 
-#Contributing
+Contributing
 --------------------------
 I welcome any contributions, enhancements, and bug-fixes.  [File an issue](https://github.com/djanta/travis-npm-deploy/issues) on GitHub and [submit a pull request](https://github.com/djantaio/travis-npm-deploy/pulls).
