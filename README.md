@@ -16,36 +16,32 @@ Once the repository has been cloned and to be able to invoke our provided npm lo
 To do so, you'll have to run the following command.  
 
 ```bash
-sh ~/travis-npm-deploy.git/deploy.sh --install
+sh ~/travis-npm-deploy/deploy.sh --install
 ```
 
 # Usage
 
-```bash
-Usage: djantaio-bump [options]
-```
-
 ## Npm login
 
 ```bash
-sh ~/travis-npm-deploy.git/deploy.sh login --user=MyNpmUserName --password=MyNpmUserPassord --email=MyNpmUserEmail
+sh ~/travis-npm-deploy/deploy.sh login --user=MyNpmUserName --password=MyNpmUserPassord --email=MyNpmUserEmail
 ```
 
 ## Npm logout
 
 ```bash
-sh ~/travis-npm-deploy.git/deploy.sh logout #You pass any mandatory npm arugment here
+sh ~/travis-npm-deploy/deploy.sh logout #You pass any mandatory npm arugment here
 ```
 
 ## Npm publish
 ```bash
-sh ~/travis-npm-deploy.git/deploy.sh #You pass any mandatory npm arugment here
+sh ~/travis-npm-deploy/deploy.sh #You pass any mandatory npm arugment here
 ```
 
 # Git Confgiure Usage
 
 ```bash
-sh ~/travis-npm-deploy.git/deploy.sh --git-config
+sh ~/travis-npm-deploy/deploy.sh --git-config
 ```
 
 # Contributing
