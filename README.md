@@ -9,7 +9,7 @@
 You can clone the repository `travis-npm-deploy` at [git](https://github.com/djanta/travis-npm-deploy.git).
 
 ```bash
-git clone https://github.com/djanta/travis-npm-deploy.git ~/travis-npm-deploy.git
+git clone https://github.com/djanta/travis-npm-deploy.git ~/travis-npm-deploy
 ```
 
 Once the repository has been cloned and to be able to invoke our provided npm login tool, the `expect` command must be installed. 
