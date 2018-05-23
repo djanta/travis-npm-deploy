@@ -26,7 +26,7 @@ case "$(uname -s)" in
   *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
 
-WDIR=`dirname ${basedir}`
+WDIR=$(pwd)
 
 PROGNAME=${0##*/}
 V_REGEX='^(v[0-9]+\.){0,2}(\*|[0-9]+)$'
@@ -101,9 +101,9 @@ git_confg () {
 
 # Begin of Npm tools
 npm_login () {
-  if which npm > /dev/null; then
-    echo "Log into npm registry ..."
-    ."${WDIR}/npm/login.sh" ${@}
+  if which npm > /dev/null && which expect > /dev/null; then
+    echo "Log into npm registry from ${WDIR} ..."
+    expect -f "${WDIR}/npm/login.sh" ${@}
   fi
 }
 
