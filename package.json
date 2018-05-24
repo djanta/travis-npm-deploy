@@ -1,6 +1,6 @@
 {
   "name": "travis-npm-deploy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "djanta platform customized NPM deploy shared script",
   "homepage": "http://djanta.io",
   "license": "MIT",
