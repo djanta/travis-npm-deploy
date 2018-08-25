@@ -141,10 +141,16 @@ case "${1}" in
         -e=*|--email=*)
           USER_EMAIL="${O#*=}"
         ;;
+        -s=*|--scope=*)
+          NPM_SCOPE="--scope=${O#*=}"
+        ;;
+        -r=*|--registry=*)
+          NPM_REGISTRY="--registry=${O#*=}"
+        ;;
       esac
     done;
     #npm_login ${@:2:$#}
-    npm_login "$USER_NAME" "$USER_PWD" "$USER_EMAIL"
+    npm_login "$USER_NAME" "$USER_PWD" "$USER_EMAIL" "$NPM_SCOPE" "$NPM_REGISTRY"
     _graceful_exit
   ;;
   logout)

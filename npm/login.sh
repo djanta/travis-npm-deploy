@@ -8,7 +8,7 @@ foreach el "$argv" { set "exp_[incr i]" "$el" }
 set timeout 60
 
 #The target expected command to execute
-spawn npm login
+spawn npm login [lindex $argv 3] [lindex $argv 4]
 
 match_max 100000
 
