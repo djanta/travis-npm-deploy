@@ -142,7 +142,7 @@ case "${1}" in
           USER_EMAIL="${O#*=}"
         ;;
         -s=*|--scope=*)
-          NPM_SCOPE="--scope=${O#*=}"
+          NPM_SCOPE="--scope=@${O#*=}"
         ;;
         -r=*|--registry=*)
           NPM_REGISTRY="--registry=${O#*=}"
