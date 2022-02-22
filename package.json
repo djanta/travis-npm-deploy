@@ -46,8 +46,8 @@
     "eslint-config-xo-space": "^0.16.0",
     "eslint": "^4.5.0",
     "eslint-plugin-nodeca": "^1.0.3",
-    "jshint": "^2.9.5",
+    "jshint": "^2.13.4",
     "grunt-bump": "^0.8.0",
-    "grunt": "^1.0.2"
+    "grunt": "^1.0.3"
   }
 }
