@@ -43,7 +43,7 @@
     "bump-premajor": "./node_modules/.bin/grunt bump:premajor"
   },
   "devDependencies": {
-    "eslint-config-xo-space": "^0.16.0",
+    "eslint-config-xo-space": "^0.31.0",
     "eslint": "^4.5.0",
     "eslint-plugin-nodeca": "^1.0.3",
     "jshint": "^2.9.5",
